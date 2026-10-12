@@ -1,0 +1,31 @@
+valor = 10
+
+if isinstance(valor, str):
+    print("String")
+
+elif isinstance(valor, int):
+    print("Inteiro")
+
+elif isinstance(valor, float):
+    print("Número decimal")
+
+elif isinstance(valor, bool):
+    print("Booleano")
+
+elif isinstance(valor, list):
+    print("Lista")
+
+elif isinstance(valor, tuple):
+    print("Tupla")
+
+elif isinstance(valor, dict):
+    print("Dicionário")
+
+elif isinstance(valor, set):
+    print("Conjunto")
+
+elif isinstance(valor, None.__class__):
+    print("None")
+
+else:
+    print("Outro tipo:", type(valor))

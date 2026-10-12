@@ -1,0 +1,130 @@
+# Exemplo de Writer e Reader em C#
+
+## Writer (Escritor)
+
+```csharp
+using System.IO;
+
+public class FileWriter
+{
+    public static void Save(string caminho, ProjetoInfo projeto)
+    {
+        using StreamWriter writer = new StreamWriter(caminho);
+
+        // Cabeçalho
+        writer.WriteLine($"ProjectName: {projeto.Nome} --(");
+
+        // Seção de blocos
+        writer.WriteLine("  Blocos --[");
+
+        foreach (Objeto obj in projeto.objetos)
+        {
+            writer.WriteLine($"     blc.-ID: {obj.Id}");
+            writer.WriteLine($"     blc.-TX7: {obj.content}");
+            writer.WriteLine($"     blc.-X: {obj.X}");
+            writer.WriteLine($"     blc.-Y: {obj.Y}");
+            writer.WriteLine($"     blc.-Wd7: {obj.Wdt}");
+            writer.WriteLine($"     blc.-Hg7h: {obj.Hegt}");
+            writer.WriteLine();
+        }
+
+        writer.WriteLine("  ]");
+        writer.WriteLine(")");
+    }
+}
+```
+
+---
+
+## Reader (Leitor)
+
+```csharp
+using System.IO;
+
+public class FileReader
+{
+    public static ProjetoInfo Load(string caminho)
+    {
+        string[] linhas = File.ReadAllLines(caminho);
+
+        ProjetoInfo projeto = new();
+        Objeto objeto = null;
+
+        foreach (string linhaOriginal in linhas)
+        {
+            string linha = linhaOriginal.Trim();
+
+            if (linha.StartsWith("ProjectName:"))
+            {
+                projeto.Nome = linha
+                    .Replace("ProjectName:", "")
+                    .Replace("--(", "")
+                    .Trim();
+            }
+
+            else if (linha.StartsWith("blc.-ID:"))
+            {
+                objeto = new Objeto();
+
+                objeto.Id = linha.Substring(8).Trim();
+
+                projeto.objetos.Add(objeto);
+            }
+
+            else if (linha.StartsWith("blc.-TX7:"))
+            {
+                objeto.content = linha.Substring(9).Trim();
+            }
+
+            else if (linha.StartsWith("blc.-X:"))
+            {
+                objeto.X = double.Parse(linha.Substring(7));
+            }
+
+            else if (linha.StartsWith("blc.-Y:"))
+            {
+                objeto.Y = double.Parse(linha.Substring(7));
+            }
+
+            else if (linha.StartsWith("blc.-Wd7:"))
+            {
+                objeto.Wdt = double.Parse(linha.Substring(9));
+            }
+
+            else if (linha.StartsWith("blc.-Hg7h:"))
+            {
+                objeto.Hegt = double.Parse(linha.Substring(10));
+            }
+        }
+
+        return projeto;
+    }
+}
+```
+
+---
+
+## Funcionamento
+
+```
+Objeto C#
+      │
+      ▼
+Writer
+      │
+      ▼
+Arquivo .flux
+      │
+      ▼
+Reader
+      │
+      ▼
+Objeto C#
+```
+
+### Regra de ouro
+
+* **Writer:** pega objetos da memória e escreve em texto.
+* **Reader:** lê o texto e recria os objetos na memória.
+
+Sempre que você criar um formato de arquivo próprio, a lógica será essa, independentemente da linguagem de programação.

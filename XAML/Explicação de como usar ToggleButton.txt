@@ -1,0 +1,29 @@
+ToggleButton
+O que é: um botão que tem estado — ao contrário do Button normal, ele fica "ligado" ou "desligado" depois que você clica (não dispara uma ação só e pronto, ele persiste o estado).
+Propriedade principal:
+
+IsChecked (bool?) — true quando pressionado/ativo, false quando não, e pode ser null (estado indeterminado, se IsThreeState="True").
+
+Uso típico:
+xml<ToggleButton x:Name="MeuBotao" Content="Ativar" IsChecked="False"/>
+Pra que serve: qualquer coisa que precise de um "liga/desliga" visual — botão de menu (como fizemos), switches, botões de "favoritar", toolbar com opções que ficam marcadas, etc. É a base de outros controles também (CheckBox e RadioButton na verdade herdam de ToggleButton).
+
+Popup
+O que é: um elemento que flutua por cima de tudo, fora do fluxo normal de layout — não ocupa espaço na tela como os outros elementos, ele aparece "por cima" numa camada separada (adorner layer).
+Propriedades principais:
+
+IsOpen (bool) — controla se ele está visível ou não.
+PlacementTarget — em relação a qual elemento ele deve se posicionar.
+Placement — de que lado aparece (Bottom, Top, Left, Right, Center, etc.).
+StaysOpen — se False, fecha sozinho ao clicar fora dele.
+AllowsTransparency — permite fundo transparente/cantos arredondados dentro dele.
+
+Uso típico:
+xml<Popup IsOpen="{Binding IsChecked, ElementName=MeuBotao}" 
+       PlacementTarget="{Binding ElementName=MeuBotao}" 
+       Placement="Bottom" StaysOpen="False">
+    <Border Background="White">
+        <TextBlock Text="Conteúdo do popup"/>
+    </Border>
+</Popup>
+Pra que serve: dropdowns, menus flutuantes, tooltips customizados, avisos temporários — qualquer coisa que precise "flutuar" sem empurrar o layout ao redor.

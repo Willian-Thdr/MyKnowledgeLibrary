@@ -1,0 +1,9 @@
+| Método                     | Recebe  | Retorna                    | Uso                                     |
+| -------------------------- | ------- | -------------------------- | --------------------------------------- |
+| `File.ReadAllText()`       | caminho | `string`                   | Ler um arquivo de texto inteiro         |
+| `File.ReadAllLines()`      | caminho | `string[]`                 | Ler texto linha por linha               |
+| `File.ReadLines()`         | caminho | `IEnumerable<string>`      | Ler linhas sem carregar tudo de uma vez |
+| `File.ReadAllBytes()`      | caminho | `byte[]`                   | Ler o arquivo como bytes                |
+| `File.ReadAllTextAsync()`  | caminho | `Task<string>`             | Ler texto inteiro de forma assíncrona   |
+| `File.ReadAllLinesAsync()` | caminho | `IAsyncEnumerable<string>` | Ler linhas de forma assíncrona          |
+| `File.OpenRead()`          | caminho | `FileStream`               | Abrir o arquivo para leitura em fluxo   |

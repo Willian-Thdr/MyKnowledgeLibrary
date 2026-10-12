@@ -1,0 +1,38 @@
+Quero criar um site ou aplicação web
+
+Front-end (o que o usuário vê): JavaScript ou TypeScript (recomendo TypeScript se o projeto crescer, pela segurança de tipos)
+Back-end: JavaScript/Node.js se quiser uma stack só de JS, Python se for algo com dados/IA envolvido, ou Java se for um sistema corporativo robusto
+
+Quero criar um app desktop (Windows)
+
+C# com WPF — é exatamente o que você já faz no Fluxogrammer. Continue nessa linha.
+
+Quero mexer com IA, dados ou automação
+
+Python, sem dúvida. É o padrão da indústria pra Machine Learning, análise de dados e scripts que automatizam tarefas repetitivas. Ótimo pro seu projeto Atlas também.
+
+Quero criar um jogo
+
+C# se for usar Unity (mais acessível, boa curva de aprendizado)
+C++ se for Unreal Engine ou precisar de performance extrema
+
+Quero programar para Android
+
+Java (mais tradicional) ou Kotlin (mais moderna, mas não citei ela na lista — vale pesquisar)
+
+Quero trabalhar com sistemas de baixo nível (drivers, firmware, SO)
+
+C para o nível mais baixo possível
+C++ quando quiser abstrações a mais mas ainda com controle de memória
+
+Quero construir back-end de alta performance e escalável (tipo infraestrutura)
+
+Go — é o que empresas como Google, Docker e Kubernetes usam. Simples e rápida.
+
+Quero segurança de memória sem abrir mão de performance
+
+Rust — ótima escolha se você quiser aprender algo mais moderno que resolve problemas clássicos de C/C++.
+
+Preciso guardar ou consultar dados
+
+SQL — não importa qual linguagem principal você use, se tiver banco de dados relacional (Postgres, MySQL, etc.), vai precisar dela.

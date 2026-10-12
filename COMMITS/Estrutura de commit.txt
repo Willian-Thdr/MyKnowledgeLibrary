@@ -1,0 +1,15 @@
+feat: implementa sistema de criação de linhas
+
+fix: corrige erro no salvamento
+
+refactor: reorganiza estrutura do editor
+
+docs: atualiza README
+
+style: ajusta formatação do código
+
+test: adiciona testes para o editor
+
+perf: melhora desempenho da renderização
+
+Usar APENAS UM dependendo do que foi feito

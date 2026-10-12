@@ -1,0 +1,69 @@
+| Método                | O que faz                                  | Exemplo                                      |
+| --------------------- | ------------------------------------------ | -------------------------------------------- |
+| `Where()`             | Filtra elementos                           | `lista.Where(x => x > 10)`                   |
+| `Select()`            | Transforma cada elemento                   | `lista.Select(x => x.Nome)`                  |
+| `SelectMany()`        | Achata coleções dentro de coleções         | `listas.SelectMany(x => x)`                  |
+| `OrderBy()`           | Ordena crescente                           | `lista.OrderBy(x => x.Idade)`                |
+| `OrderByDescending()` | Ordena decrescente                         | `lista.OrderByDescending(x => x.Idade)`      |
+| `ThenBy()`            | Segundo critério de ordenação              | `.OrderBy(x => x.Nome).ThenBy(x => x.Idade)` |
+| `ThenByDescending()`  | Segundo critério decrescente               | `.ThenByDescending(x => x.Idade)`            |
+| `Reverse()`           | Inverte a sequência                        | `lista.Reverse()`                            |
+| `Distinct()`          | Remove duplicados                          | `lista.Distinct()`                           |
+| `DistinctBy()`        | Remove duplicados usando uma propriedade   | `lista.DistinctBy(x => x.Id)`                |
+| `Union()`             | Junta duas sequências removendo duplicados | `a.Union(b)`                                 |
+| `Intersect()`         | Pega elementos presentes nas duas          | `a.Intersect(b)`                             |
+| `Except()`            | Pega elementos de A que não estão em B     | `a.Except(b)`                                |
+| `Concat()`            | Junta duas sequências                      | `a.Concat(b)`                                |
+| `Append()`            | Adiciona um elemento ao final              | `lista.Append(x)`                            |
+| `Prepend()`           | Adiciona um elemento ao início             | `lista.Prepend(x)`                           |
+
+Filtragem e Busca
+| Método                 | O que faz                                 | Exemplo                        |
+| ---------------------- | ----------------------------------------- | ------------------------------ |
+| `First()`              | Primeiro elemento; lança erro se vazio    | `lista.First()`                |
+| `FirstOrDefault()`     | Primeiro elemento ou `default`            | `lista.FirstOrDefault()`       |
+| `Last()`               | Último elemento; lança erro se vazio      | `lista.Last()`                 |
+| `LastOrDefault()`      | Último elemento ou `default`              | `lista.LastOrDefault()`        |
+| `Single()`             | Exige exatamente 1 elemento               | `lista.Single()`               |
+| `SingleOrDefault()`    | Exige no máximo 1                         | `lista.SingleOrDefault()`      |
+| `ElementAt()`          | Elemento de determinado índice            | `lista.ElementAt(2)`           |
+| `ElementAtOrDefault()` | Índice ou `default`                       | `lista.ElementAtOrDefault(20)` |
+| `Contains()`           | Verifica se contém algo                   | `lista.Contains(x)`            |
+| `Any()`                | Verifica se existe pelo menos um          | `lista.Any()`                  |
+| `All()`                | Verifica se todos satisfazem uma condição | `lista.All(x => x > 0)`        |
+| `Count()`              | Conta elementos                           | `lista.Count()`                |
+| `LongCount()`          | Conta usando `long`                       | `lista.LongCount()`            |
+
+Agregação
+| Método        | O que faz                                  | Exemplo                         |
+| ------------- | ------------------------------------------ | ------------------------------- |
+| `Sum()`       | Soma valores                               | `lista.Sum()`                   |
+| `Average()`   | Média                                      | `lista.Average()`               |
+| `Min()`       | Menor valor                                | `lista.Min()`                   |
+| `Max()`       | Maior valor                                | `lista.Max()`                   |
+| `MinBy()`     | Elemento com menor propriedade             | `lista.MinBy(x => x.Idade)`     |
+| `MaxBy()`     | Elemento com maior propriedade             | `lista.MaxBy(x => x.Idade)`     |
+| `Aggregate()` | Faz uma operação acumulativa personalizada | `lista.Aggregate((a,b) => a+b)` |
+
+Conversão
+| Método           | O que faz                                  | Exemplo                         |
+| ---------------- | ------------------------------------------ | ------------------------------- |
+| `ToList()`       | Converte para `List<T>`                    | `array.ToList()`                |
+| `ToArray()`      | Converte para array                        | `lista.ToArray()`               |
+| `ToHashSet()`    | Converte para `HashSet<T>`                 | `lista.ToHashSet()`             |
+| `ToDictionary()` | Converte para `Dictionary`                 | `lista.ToDictionary(x => x.Id)` |
+| `Cast<T>()`      | Converte os elementos para `T`             | `lista.Cast<string>()`          |
+| `OfType<T>()`    | Pega somente elementos de determinado tipo | `lista.OfType<string>()`        |
+
+
+Dictionary<T,T>
+| Método             | O que faz                             |
+| ------------------ | ------------------------------------- |
+| `Where()`          | Filtra pares chave/valor              |
+| `Select()`         | Transforma os pares                   |
+| `Any()`            | Verifica se existe algum              |
+| `All()`            | Verifica se todos satisfazem condição |
+| `First()`          | Primeiro par                          |
+| `FirstOrDefault()` | Primeiro par ou `default`             |
+| `ToList()`         | Converte para lista                   |
+| `ToDictionary()`   | Cria outro dicionário                 |
