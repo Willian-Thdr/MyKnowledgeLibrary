@@ -15,7 +15,9 @@
 [Python](https://github.com/Willian-Thdr/MyKnowledgeLibrary/tree/main/PYTHON)  
 [TypeScrypt](https://github.com/Willian-Thdr/MyKnowledgeLibrary/tree/main/TYPESCRIPT)  
 [XAML](https://github.com/Willian-Thdr/MyKnowledgeLibrary/tree/main/XAML)  
-[SQL](https://github.com/Willian-Thdr/MyKnowledgeLibrary/tree/main/SQL)
+[SQL](https://github.com/Willian-Thdr/MyKnowledgeLibrary/tree/main/SQL)  
+[Livros](https://github.com/Willian-Thdr/MyKnowledgeLibrary/tree/main/Livros)  
+[Web](https://github.com/Willian-Thdr/MyKnowledgeLibrary/tree/main/Web_(HTML_CSS_e_JS))
 
 ## Note
 
